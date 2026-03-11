@@ -8,13 +8,11 @@ body {
 font-family: Arial, Helvetica, sans-serif;
 background:#4c4c4c;
 color: black;
-padding: 40px 20px;
 }
 
-.site-container {
+.page {
 width: 100%;
-max-width: 1100px;
-margin: 0 auto;
+min-height: 100vh;
 background: white;
 }
 
@@ -24,61 +22,73 @@ background: white;
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 24px 36px;
-font-size: 14px;
+padding: 36px 48px;
+background: white;
 }
 
 .logo {
-font-size: 20px;
+font-size: 24px;
 font-weight: 700;
 }
 
 .navbar nav {
 display: flex;
-gap: 20px;
+gap: 24px;
+}
 
 .navbar nav a {
 text-decoration: none;
 color: black;
+font-size: 18px;
 }
 
-/*HERO*/
+/*PUBLIS*/
 
-.hero {
-display: grid;
-grid-template-columns: 1fr 2fr;
+.publis {
+width: 100%;
+background: #e8b7c4;
+padding: 80px 48px 100px 48px;
+}
+
+.publis-header {
+display: flex;
+justify-content: space-between;
+align-items: flew-end;
 gap: 40px;
-padding: 60px 36px;
-background: #e8b7c4
-align-items: start;
+margin-bottom: 60px;
 }
 
-.hero-left h1 {
-font-size: 78px;
+.publis-intro {
+max-width: 420px;
+}
+
+.publis h2 {
+font-size: 88px;
 line-height: 0.95;
-margin-bottom: 20px;
 font-weight: 800;
+margin-bottom: 20px;
 }
 
-.hero-left p {
-font-size: 24px;
-max-width: 220px;
-margin-bottom: 30px;
+.publis p {
+font-size: 28px;
+line-height: 1.2;
 }
 
 .btn-outline {
-padding:12px 22px;
+padding:14px 24px;
 border-radius: 999px;
-border: 1px solid black;
+border: 1.5px solid black;
 background: transparent;
 cursor: pointer;
-font-size: 14px;
+font-size: 16px;
 }
+
+/*GRILLE DES CHRONIQUES*/
 
 .chroniques-grid {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 24px;
+gap: 32px;
 }
 
 .chronique-card img {
@@ -86,70 +96,131 @@ width: 100%;
 aspect-ratio: 4 / 3;
 object-fit: cover;
 display: block;
-margin-bottom: 14px;
+margin-bottom: 16px;
 }
 
 .chronique-card h3 {
-font-size: 20px;
-margin-bottom: 8px;
+font-size: 30px;
+margin-bottom: 10px;
+font-weight: 700;
 }
 
 .chronique-card a {
 text-decoration: none;
 color: black;
-font-size: 14px;
+font-size: 18px;
 }
 
 /*ABOUT*/
 
 .about {
+width: 100%;
+background: white;
 display: grid;
-grid-template-columns: 1fr 2fr;
-gap: 40px;
-padding: 60px 36px;
-background:#f3f3f3;
+grid-template-columns: 1fr 1.4fr;
+gap: 60px;
+padding: 90px 48px;
+align-items: start;
 }
 
-.about h2 {
-font-size: 78px;
+.about-left h2 {
+font-size: 88px;
 line-height: 0.95;
 font-weight: 800;
+color: #e8b7c4
 }
 
 .about-right p {
 font-size: 32px;
-line-height: 1.2;
-max-width: 500px;
+line-height: 1.25;
+max-width: 760px;
 }
 
 /*FOOTER*/
 
 footer {
-	padding: 24px 36px;
-	color: grey;
-	font-size: 14px;
+	padding: 28px 48px 40px 48px;
 	background: white;
-	text-align: right;
 }
 
-/*RESPONSIVE*/
+footer p {
+color: grey;
+font-size: 16px;
+}
 
-@media (max-width: 900px) {
-	.hero,
+/*TABLETTE*/
+
+@media (max-width: 1024px) {
+	.publis h2,
+	.about-left h2 {
+		font-size: 68px;
+	}
+	
+	.publis p {
+		font-size: 24px;
+	}
+	
+	.about-right p {
+		font-size: 26px;
+	}
+	
+	.chronique-card h3 {
+		font-size: 24px;
+	}
+}
+
+/*MOBILE*/
+
+@media (max-width: 768px) {
+	.navbar {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 18px;
+		padding: 24px;
+	}
+	
+	.navbar nav {
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+	
+	.publis {
+		padding: 60px 24px 70px 24px;
+	}
+	
+	.publis-header {
+		flex-direction: column;
+		align-items: flex-start;
+		margin-bottom: 40px;
+	}
+	
+	.publis h2 {
+		font-size: 56px;
+	}
+	
+	.publis p {
+		font-size: 22px;
+	}
+	
+	.chroniques-grid {
+		grid-template-columns: 1fr;
+		gap: 28px;
+	}
+	
 	.about {
 		grid-template-columns: 1fr;
-	}
+		gap: 30px;
+		padding: 60px 24px;
 	
-	.chronique-grid {
-		grid-template-columns: 1fr;
-	}
-	
-	.hero-left h1,
-	.about h2 {
-		font-size: 54px;
+	.about-left h2 {
+		font-size: 56px;
 	}
 	
 	.about-right p {
 		font-size: 22px;
+	}
+	
+	footer {
+		padding: 24px;
 	}
 }
